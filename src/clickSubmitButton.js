@@ -21,17 +21,17 @@ function onClickLonBtnSubmit(event) {
     );
     return;
   } else {
-    galleryEl.innerHTML = '';
-    fetchData(value, stepPage)
+    galleryList.innerHTML = '';
+    fetchData(value, step)
       .then(checkResponse)
       .catch(error => console.log(error));
   }
 }
 
 async function onClickAddPage() {
-  stepPage += 1;
-  fetchData(value, stepPage)
-    .then(data => onClickLoadMore(data, stepPage))
+  step += 1;
+  fetchData(value, step)
+    .then(data => onClickLoadMore(data, step))
     .catch(error => console.log(error));
 }
 
