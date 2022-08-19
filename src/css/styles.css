@@ -29,8 +29,8 @@ input {
 
 .container {
     max-width: 1200px;
-    padding-left: 50px;
-    padding-right: 20px;
+    padding-left: 15px;
+    padding-right: 15px;
     margin-left: auto;
     margin-right: auto;
     display: flex;
@@ -108,13 +108,13 @@ border: transparent;
     text-decoration: none;
 }
 
-.container {
+/* .container {
     max-width: 1200px;
     padding-left: 20px;
     padding-right: 20px;
     margin-left: auto;
     margin-right: auto;
-}
+} */
 
 @media screen and (max-width: 1199px) {
     .gallery__link:not(:last-child) {
