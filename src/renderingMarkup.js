@@ -1,7 +1,10 @@
 import { galleryList } from './refs';
+import SimpleLightBox from 'simplelightbox';
+import 'simplelightbox/dist/simple-lightbox.min.css';
+
 
 const createGalleryMarkup = galleryEl => {
-    galleryEl.innerHTML = '';
+    // galleryEl.innerHTML = '';
 
 
     const render = galleryEl.map(
@@ -19,23 +22,32 @@ const createGalleryMarkup = galleryEl => {
   <img src="${webformatURL}" alt="${tags}" loading="lazy" />
   <div class="info">
     <p class="info-item">
-      <b>Likes<br>${likes}</b>
+      <b>Likes: <br>${likes}</b>
     </p>
     <p class="info-item">
-      <b>Views<br>${views}</b>
+      <b>Views: <br>${views}</b>
     </p>
     <p class="info-item">
-      <b>Comments<br>${comments}</b>
+      <b>Comments: <br>${comments}</b>
     </p>
     <p class="info-item">
-      <b>Downloads<br>${downloads}</b>
+      <b>Downloads: <br>${downloads}</b>
     </p>
   </div>
-</div>`
+</div></a>`
     ).join('');
-    galleryList.insertAdjacentHTML('beforeend', render);
+  galleryList.insertAdjacentHTML('beforeend', render);
+  
 
-    return galleryList;
+  const simpleLightboxEl = new SimpleLightBox('.galleryEl a', {
+    captionsData: 'alt',
+    captionPosition: 'bottom',
+    animationSpeed: 300,
+    docClose: true,
+  });
+  simpleLightboxEl.refresh();
+
+    // return galleryList;
 }
 
 

@@ -14,7 +14,7 @@ function onClickLoadMore(response, step) {
     );
   }
   createGalleryMarkup(dataTotalImg);
-  endlessScroll(galleryList);
+  // endlessScroll(galleryList);
 }
 
 export default onClickLoadMore;

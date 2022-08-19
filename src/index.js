@@ -1,8 +1,10 @@
 import './css/styles.css';
-import { searchForm, inputForm, submitButton, gallery } from './refs';
+import { searchForm, loadMoreButton } from './refs';
+import clickonBtnSubmit from './clickSubmitButton'
 
 
-searchForm.addEventListener('submit', clickSubmitBtn);
+searchForm.addEventListener('submit', clickonBtnSubmit);
+loadMoreButton.addEventListener('click', onClickAddPage);
 
 
 

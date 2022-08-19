@@ -1,4 +1,4 @@
-import { searchForm, inputForm, submitButton, galleryList } from './refs';
+import { loadMoreButton, galleryList } from './refs';
 import Notiflix from 'notiflix';
 import fetchGallery from './fetchPics';
 import onClickLoadMore from './loadMorePics';
@@ -9,30 +9,31 @@ let step = 1;
 
 
 
-function onClickLonBtnSubmit(event) {
+function clickonBtnSubmit(event) {
   event.preventDefault();
-  value = event.target.searchQuery.value.toLowerCase().trim();
+  value = event.target.value.toLowerCase().trim();
+  console.log(event.target)
 
   if (!value) {
-    galleryEl.innerHTML = '';
-    loadMoreBtnEl.classList.add('is-hidden');
+    galleryList.innerHTML = '';
+    loadMoreButton.classList.add('is-hidden');
     Notiflix.Notify.failure(
       'Sorry, there are no images matching your search query. Please try again.'
     );
     return;
   } else {
     galleryList.innerHTML = '';
-    fetchData(value, step)
+    fetchGallery(value, step)
       .then(checkResponse)
       .catch(error => console.log(error));
   }
 }
 
-async function onClickAddPage() {
+function onClickAddPage() {
   step += 1;
-  fetchData(value, step)
+  fetchGallery(value, step)
     .then(data => onClickLoadMore(data, step))
     .catch(error => console.log(error));
 }
 
-export { onClickLonBtnSubmit, onClickAddPage };
+export { clickonBtnSubmit, onClickAddPage };

@@ -4,4 +4,4 @@ const submitButton = document.querySelector('.search-submit');
 const loadMoreButton = document.querySelector('.load-more')
 const galleryList = document.querySelector('.gallery');
 
-export { searchForm, inputForm, submitButton, galleryList };
+export { searchForm, inputForm, submitButton, galleryList, loadMoreButton };
