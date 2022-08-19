@@ -74,14 +74,14 @@ input {
     border-radius: 5px;
     align-items: center;
         justify-items: center;
-        
+        border: transparent;
 }
 
 .search-submit{
     background-color: #ee3232;
     color: #fafafa;
     border-radius: 5px;
-
+border: transparent;
 }
 
 
