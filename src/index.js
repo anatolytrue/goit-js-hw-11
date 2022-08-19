@@ -1,6 +1,6 @@
 import './css/styles.css';
 import { searchForm, loadMoreButton } from './refs';
-import clickonBtnSubmit from './clickSubmitButton'
+import { clickonBtnSubmit, onClickAddPage } from './clickSubmitButton'
 
 
 searchForm.addEventListener('submit', clickonBtnSubmit);

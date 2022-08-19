@@ -2,6 +2,7 @@ import { loadMoreButton, galleryList } from './refs';
 import Notiflix from 'notiflix';
 import fetchGallery from './fetchPics';
 import onClickLoadMore from './loadMorePics';
+import checkResponse from './checkTotalHits';
 
 let value = null;
 let step = 1;
@@ -11,7 +12,7 @@ let step = 1;
 
 function clickonBtnSubmit(event) {
   event.preventDefault();
-  value = event.target.value.toLowerCase().trim();
+  value = event.target.searchQuery.value.toLowerCase().trim();
   console.log(event.target)
 
   if (!value) {
