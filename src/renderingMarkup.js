@@ -19,7 +19,9 @@ const createGalleryMarkup = galleryEl => {
         }) =>
             `<a class="gallery__link" href="${largeImageURL}">
         <div class="photo-card">
+        <div class="thumb">
   <img src="${webformatURL}" alt="${tags}" loading="lazy" />
+  </div>
   <div class="info">
     <p class="info-item">
       <b>Likes: <br>${likes}</b>
@@ -39,13 +41,12 @@ const createGalleryMarkup = galleryEl => {
   galleryList.insertAdjacentHTML('beforeend', render);
   
 
-  const simpleLightboxEl = new SimpleLightBox('.galleryEl a', {
+  const lightbox = new SimpleLightBox('.gallery a', {
     captionsData: 'alt',
     captionPosition: 'bottom',
     animationSpeed: 300,
-    docClose: true,
   });
-  simpleLightboxEl.refresh();
+  lightbox.refresh();
 
     // return galleryList;
 }
